@@ -1,0 +1,83 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.cards{
+    display: flex;
+}
+
+.card{
+    margin: 10px;
+    width: 300px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card .image img{
+    max-width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card .content h2{
+    font-family: sans-serif;
+    margin-left: 30px;
+    font-weight: bold;
+} 
+
+.card .content p{
+    font-family: sans-serif;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/*TARJETA DE CARGA*/
+
+.card.is-loading .image,
+.card.is-loading h2,
+.card.is-loading p{
+    background: #eee;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    -webkit-animation: 1.5s shine linear infinite;
+            animation: 1.5s shine linear infinite;
+}
+
+.card.is-loading .image{
+    height: 200px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.card.is-loading h2{
+    height: 30px;
+    width: 65%;
+    margin-left: 50px;
+}
+
+.card.is-loading p{
+    height: 70px;
+    width: 65%;
+    margin-left: 50px;
+}
+
+@-webkit-keyframes shine {
+    to{
+        background-position-x: -200%;
+    }
+}
+
+@keyframes shine {
+    to{
+        background-position-x: -200%;
+    }
+}
